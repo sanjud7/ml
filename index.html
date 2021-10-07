@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND gate</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="brython.js" type="text/javascript">
+    </script>
+    <script src="brython_stdlib.js" type="text/javascript"> </script>
+    <script src="custom.js" type="text/javascript"> </script>
+</head>
+
+<body onload="brython()">
+    <h1 align='center'> Implementation of Logical AND Gate </h1>
+    <div class="vlab">
+        <h2 class="h2lab">Virtual Lab</h2>
+    </div>
+    <div id="leftnav" class="leftnav">
+        <ul class="list">
+            <li id="aim" onclick="task1()">Aim</li>
+            <hr>
+            <li id="thry" onclick="task2()">Theory</li>
+            <hr>
+            <li id="pre" onclick="task3()">Pretest</li>
+            <hr>
+            <li id="prc" onclick="task4()">Procedure</li>
+            <hr>
+            <li id="sim" onclick="task5()">Simulation</li>
+            <hr>
+            <li id="pre" onclick="task6()">Post Test</li>
+            <hr>
+            <li id="ref" onclick="task7()">Refrences</li>
+            <hr>
+        </ul>
+    </div>
+    <h2 id="text" class="tasktext"> To understand the working of neural networks using AND Gate implemented through a
+        single neuron of the neural network.</h2>
+    <img src="" id="thryimg" class="thryimg">
+    <div id="theory" class="theory">
+        <b>
+            <p>Types of activation functions:-<br> <br>
+                1. Hard-limit Activation Function</p>
+
+            <p>2. Soft-limit (Sigmoidal) Activation Function</p>
+
+
+            <p>3. Piecewise Linear Activation Function</p>
+
+
+
+
+
+            <p>4. Signum Activation Function</p>
+
+            <h3>Working</h3>
+            <pre>
+            Let us consider the problem of building an OR Gate using single layer perceptron.
+
+            Following is the truth table of OR Gate.
+            </pre>
+            <img src="img/table.jpeg">
+            <img src="img/sim.jpeg">
+            <pre>
+            Referring to the above neural network and truth table, X and Y are the two inputs corresponding to X1 and
+            X2. Let Y' be the output of the perceptron and let Z' be the output of the neural network after applying the
+            activation function (Signum in this case). Let the weights be W1=1 and W2=1.
+            Now,
+
+            Y' = X*w1 + Y*w2
+            Z' = F(Y') ; F is the Activation Function. Let us assume the threshold is 0.5.
+
+            Thus, Z' = F(Y') will be defined as
+            Z' = 1 , Y' >= 0.5
+             = 0 , Y' < 0.5 For X=0 & Y=0 Y'=X*w1 + Y*w2 Y'=0*1 + 0*1 Y'=0 + 0 Y'=0 Z'=F(Y') Z'=F(0) For Signum
+                activation function, F(x)=0 ; x < 0.5 Z'=0 For X=0 & Y=1 Y'=X*w1 + Y*w2 Y'=0*1 + 1*1 Y'=0 + 1 Y'=1
+                Z'=F(Y') Z'=F(1) For Signum activation function, F(x)=1 ; x> 0.5
+
+                Z' = 1
+
+                For X=1 & Y=0
+
+                Y' = X*w1 + Y*w2
+                Y' = 1*1 + 0*1
+                Y' = 1 + 0
+                Y' = 1
+                Z' = F(Y')
+                Z' = F(1)
+                For Signum activation function, F(x) = 1 ; x > 0.5
+
+                Z' = 1
+
+                For X=1 & Y=1
+
+                Y' = X*w1 + Y*w2
+                Y' = 1*1 + 1*1
+                Y' = 1 + 1
+                Y' = 1
+                Z' = F(Y')
+                Z' = F(1)
+                For Signum activation function, F(x) = 1 ; x > 0.5
+
+                Z' = 1
+
+                Thus we can plot a graph as shown below where ^ represents 0 and X represents 1.
+            </pre>
+        </b>
+
+    </div>
+
+
+    <section class="content" id="content">
+        <h3 style="margin-top:5%">Pre Test</h3>
+        <p class="MsoNormal" style="text-align:justify">
+            <!-- Pre Test content goes here -->
+            <div>
+                <h3>1. Which of the following is the truth table of NOT Gate?</h3>
+                <div class="radio">
+                    <label><input type="radio" class="optradio1" name="optradio1" id="Q11">A<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>I/P</th>
+                                <th>O/P</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" class="optradio1" name="optradio1" id="Q12">B<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>I/P</th>
+                                <th>O/P</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" class="optradio1" name="optradio1" id="Q13">C<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>I/P</th>
+                                <th>O/P</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" class="optradio1" name="optradio1" id="Q14">D<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>I/P</th>
+                                <th>O/P</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <p id="optradio1Ans" class="testAns" style="display:none;"> Ans is B</p>
+            </div>
+
+            <div>
+                <h3>2. Two inputs to AND Gate are 0 and 1 respectively. Which of the following will be the output of the
+                    AND Gate?</h3>
+                <div class="radio">
+                    <label><input type="radio" class="optradio2" name="optradio2" id="Q21">A. 0</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" class="optradio2" name="optradio2" id="Q22">B. 1</label>
+                </div>
+                <p id="optradio2Ans" class="testAns" style="display:none;"> Ans is A</p>
+            </div>
+
+            <div>
+                <h3>3. Which of the following is the truth table of OR Gate?</h3>
+                <div class="radio">
+                    <label><input type="radio" class="optradio3" name="optradio3" id="Q31">A<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>I/P #1</th>
+                                <th>I/P #2</th>
+                                <th>O/P</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" class="optradio3" name="optradio3" id="Q32">B<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>I/P #1</th>
+                                <th>I/P #2</th>
+                                <th>O/P</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" class="optradio3" name="optradio3" id="Q33">C<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>I/P #1</th>
+                                <th>I/P #2</th>
+                                <th>O/P</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" class="optradio3" name="optradio3" id="Q34">D<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>I/P #1</th>
+                                <th>I/P #2</th>
+                                <th>O/P</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <p id="optradio3Ans" class="testAns" style="display:none;"> Ans is D</p>
+            </div>
+        </p>
+    </section>
+
+    <section class="content" id="pro" style="font-size: larger">
+        <h3 style="margin-top:5%">Procedure</h3>
+        <p class="MsoNormal" style="text-align:justify">
+            <!--Theory content goes here -->
+            The following procedure is to be followed for the simulation:
+        </p>
+        <ol>
+            <li>Select any one of the gates from the dropdown. By default, AND Gate is selected.</li>
+            <li>Click on <button class="btn btn-success" style="cursor: default;">Start Simulation</button> button.</li>
+            <li>Now, wait and observe how the I/P combination is interpreted by the neural network.</li>
+            <li>After the neural network completely interprets each I/P combination, the <button class="btn btn-warning"
+                    style="cursor: default;">Apply next set of I/P values</button> button gets enabled. After
+                understanding how this I/P combination was interpreted by the neural network, you can click on this
+                button. After clicking on this button, this button gets disabled until the next input is completely
+                interpreted by the neural network.</li>
+        </ol>
+        <p>After the entire simulation is completed, you will get a popup indicating this completion. Now you may select
+            another Gate and run the simulation.</p>
+        <p>At any point of time during the simulation, you can stop the simulation by clicking on the <button
+                class="btn btn-danger" style="cursor: default;">Stop Simulation</button> button.</p>
+        <p>The correct outputs will be obtained by the neural network only for certain ranges of inputs.<br />
+            You can easily visualize this using the graph. When the line (decision boundary) is such that points that
+            look same are on the same side of the line, then correct output has been obtained.</p>
+        <p>
+            <b>E.g.</b> In the following plot, <b>similar points are not on the same side of the line.</b>.
+            Hence, the weights and threshold chosen provide an <b>incorrect output</b> for the corresponding Gate.<br />
+            <img src="img/ss2.jpeg" alt="SS2" /><br />
+            <b>E.g.</b> In the following plot, <b>similar points are on the same side of the line</b>.
+            Hence, the weights and threshold chosen provide a <b>correct output</b> for the corresponding Gate.<br />
+            <img src="img/ss1.jpeg" alt="SS1" /><br />
+            <b>Note:</b> If you choose negative weights and a negative threshold, then the decision boundary might
+            recognize similar points in the same class. But here the output will be for the opposite class. To see this,
+            try -1 as weights and -1.5 as the threshold in AND Gate simulation. This will give incorrect
+            outputs.<br><br>
+
+            <b>* </b> Hint for all the gates in order to obtain appropriate outputs is given in the Post Test Section.
+        </p>
+    </section>
+
+    <section class="content" id="post">
+        <h3 style="margin-top:5%">Post Test</h3>
+        <p class="MsoNormal" style="text-align:justify">
+            <!-- Post Test content goes here -->
+            <div>
+                <h3>1. Which of the following can be the correct combination of weights & threshold for the neural
+                    network to function as an OR Gate?</h3>
+                <div class="radio">
+                    <label><input name="Q1" type="radio" class="optradio1" value="Q11">A<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>W1</th>
+                                <th>W2</th>
+                                <th>Threshold</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input name="Q1" type="radio" class="optradio1" value="Q12">B<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>W1</th>
+                                <th>W2</th>
+                                <th>Threshold</th>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td style="text-align: center;">1</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input name="Q1" type="radio" class="optradio1" value="Q13">C<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>W1</th>
+                                <th>W2</th>
+                                <th>Threshold</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td style="text-align: center;">0</td>
+                            </tr>
+                        </table></label>
+                </div>
+                <div class="radio">
+                    <label><input name="Q1" type="radio" class="optradio1" value="Q14">D<table
+                            class="table-condensed truthTable" style="text-align: center;">
+                            <tr>
+                                <th>W1</th>
+                                <th>W2</th>
+                                <th>Threshold</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td style="text-align: center;">0.5</td>
+                            </tr>
+                        </table></label>
+                </div><br />
+                <p id="optradio1Ans" class="testAns" style="display:none;"> Ans is D</p>
+            </div>
+
+            <div>
+                <h3>2. The experiment performed can be considered as an example of which of the following type of
+                    learning?</h3>
+                <div class="radio">
+                    <label><input type="radio" name="Q2" class="optradio2" id="Q12">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>A. Supervised Learning</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="Q2" class="optradio2" id="Q22">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>B. Unsupervised Learning</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="Q2" class="optradio2" id="Q23">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>C. Reinforcement Learning</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div><br />
+                <p id="optradio2Ans" class="testAns" style="display:none;"> Ans is A</p>
+            </div>
+
+            <div>
+                <h3>3.Given the weights W1 = 0.4 & W2 = 0.3, what should be the threshold value for the neural network
+                    to function as AND Gate?</h3>
+                <div class="radio">
+                    <label><input type="radio" name="Q3" class="optradio3" id="Q31">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>A. Greater than 0 but less than 0.3</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="Q3" class="optradio3" id="Q32">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>B. Greater than 0.3 but less than 0.4</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="Q3" class="optradio3" id="Q33">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>C. Greater than 0.4 but less than 1</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="Q3" class="optradio3" id="Q34">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>D. Greater than 1</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div><br />
+                <p id="optradio3Ans" class="testAns" style="display:none;"> Ans is C</p>
+            </div>
+
+            <div>
+                <h3>4. Which of the following Gates cannot be implemented using single layer perceptron model?</h3>
+                <div class="radio">
+                    <label><input type="radio" name="Q4" class="optradio4" id="Q41">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>A. AND</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="Q4" class="optradio4" id="Q42">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>B. OR</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="Q4" class="optradio4" id="Q43">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>C. NOT</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="Q4" class="optradio4" id="Q44">
+                        <table class="table-condensed" style="text-align: center;">
+                            <tr>
+                                <th>D. XOR</th>
+                            </tr>
+                        </table>
+                    </label>
+                </div><br />
+                <p id="optradio4Ans" class="testAns" style="display:none;"> Ans is D</p>
+            </div>
+
+            <br><br>
+            <b>Hints :-</b><br><br>
+            1. And Gate :- Try using 1.5 as threshold and 1 as weights<br>
+            2. Or Gate :- Try using 0.5 as threshold and 1 as weights<br>
+            3. Not Gate :- Try using -0.5 as threshold and -1 as weight
+        </p>
+    </section>
+    <div class="content" id="references">
+        <h2>Logic gates -tutorial point</h2>
+        <a href="http://vlabs.iitb.ac.in/vlabs-dev/labs/machine_learning/labs/exp1/theory.php">Click Here to visit</a>
+
+    </div>
+
+    <h1 id="simulation" class="simulation"> <a href="webrun:C:\Users\DELL\Desktop\dist\ml.exe" align=center>CLICK TO RUN
+            APPLICATION</a> </h1>
+</body>
+
+</html>
